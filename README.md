@@ -11,6 +11,10 @@ This project also provides a very well formatted HTML report using Mochawesone-m
 
 To run all test(BE+FE): npm run test (This command will execute all spec.js and feature files)
 
+tests can be run using cypress test runner as well using below steps:
+1. open test runner: yarn run cypress open
+2. select the feature/spec.js you want to execute
+3.
 #### Reporting 
 once above execution is completed a report will be generated under folder path /Users/preetirani/Desktop/CypressWorkspace/cypress/reports/mochareports where list of all passed/failed/skipped test along with time stamp,run time can ve validated.
 
