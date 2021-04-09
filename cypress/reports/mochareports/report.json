@@ -1,0 +1,231 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-04-09T11:13:35.672Z",
+    "end": "2021-04-09T11:13:45.430Z",
+    "duration": 1529,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2307daf1-c3dd-4888-a627-fafd5279298b",
+      "title": "",
+      "fullFile": "cypress/integration/API/api.js",
+      "file": "cypress/integration/API/api.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "859b7155-795d-4108-b0d8-ced81e6cdee6",
+          "title": "api test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get member details",
+              "fullTitle": "api test Get member details",
+              "timedOut": null,
+              "duration": 525,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: '/members/John?key=063ae17508bef65f8d726e8f504e896f&token=974634547231230109a755594ce1a4af06ee5d68fbd79f46acc89a655432eb87'\n}).then(function (response) {\n  //expect(response).to.have.property('status',200);\n  expect(response.status).equal(200);\n  expect(response.body).to.not.be[\"null\"];\n  expect(response.body.idBoards).to.have.length(11);\n});",
+              "err": {},
+              "uuid": "56a0d912-40dc-4c1d-a294-892794f3e7c8",
+              "parentUUID": "859b7155-795d-4108-b0d8-ced81e6cdee6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "crate board",
+              "fullTitle": "api test crate board",
+              "timedOut": null,
+              "duration": 236,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: '/boards/?key=063ae17508bef65f8d726e8f504e896f&token=974634547231230109a755594ce1a4af06ee5d68fbd79f46acc89a655432eb87&name=preeti'\n}).its('body').should('include', {\n  name: 'preeti'\n});",
+              "err": {},
+              "uuid": "cc511332-de2e-4896-b162-1af88dd8c22d",
+              "parentUUID": "859b7155-795d-4108-b0d8-ced81e6cdee6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete board",
+              "fullTitle": "api test delete board",
+              "timedOut": null,
+              "duration": 145,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'DELETE',\n  url: '/boards/606e10f14e29bb8800bc95ec?key=063ae17508bef65f8d726e8f504e896f&token=974634547231230109a755594ce1a4af06ee5d68fbd79f46acc89a655432eb87',\n  failOnStatusCode: false\n}).then(function (response) {\n  expect(response).to.have.property('status', 404);\n});",
+              "err": {},
+              "uuid": "53bfce9d-8fc8-4239-b90d-ba813d3fc958",
+              "parentUUID": "859b7155-795d-4108-b0d8-ced81e6cdee6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "56a0d912-40dc-4c1d-a294-892794f3e7c8",
+            "cc511332-de2e-4896-b162-1af88dd8c22d",
+            "53bfce9d-8fc8-4239-b90d-ba813d3fc958"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 906,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b2da5a79-1b8e-4b14-a0c8-ca8524909b10",
+      "title": "",
+      "fullFile": "cypress/integration/UI/error.js",
+      "file": "cypress/integration/UI/error.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 320,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "ReferenceError: The following error originated from your test code, not from Cypress.\n\n  > Given is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
+            "estack": "ReferenceError: The following error originated from your test code, not from Cypress.\n\n  > Given is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n    at Object.1 (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/error.js:5:1)\n    at o (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/error.js:1:265)\n    at r (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/error.js:1:431)\n    at eval (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/error.js:1:460)\n    at eval (<anonymous>)",
+            "diff": null
+          },
+          "uuid": "a52c43bb-b534-4276-a366-90178f3ac782",
+          "parentUUID": "b2da5a79-1b8e-4b14-a0c8-ca8524909b10",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "a52c43bb-b534-4276-a366-90178f3ac782"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 320,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ba11b7cd-42e0-416c-b71b-97689eb4e7ea",
+      "title": "",
+      "fullFile": "cypress/integration/UI/IncorrectID.js",
+      "file": "cypress/integration/UI/IncorrectID.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 303,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "ReferenceError: The following error originated from your test code, not from Cypress.\n\n  > Given is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
+            "estack": "ReferenceError: The following error originated from your test code, not from Cypress.\n\n  > Given is not defined\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n    at Object.1 (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/IncorrectID.js:5:1)\n    at o (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/IncorrectID.js:1:265)\n    at r (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/IncorrectID.js:1:431)\n    at eval (http://localhost:54150/__cypress/tests?p=cypress/integration/UI/IncorrectID.js:1:460)\n    at eval (<anonymous>)",
+            "diff": null
+          },
+          "uuid": "05671116-78ff-49c0-bdc0-d8f822962c43",
+          "parentUUID": "ba11b7cd-42e0-416c-b71b-97689eb4e7ea",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "05671116-78ff-49c0-bdc0-d8f822962c43"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 303,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
